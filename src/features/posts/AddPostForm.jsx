@@ -12,18 +12,25 @@ const AddPostForm = () => {
 	const [userId, setUserId] = useState('')
 
 	const onTitleChanged = (e) => setTitle(e.target.value)
-	const onContentChanged = (e) => setContent(e.target.value)
+    const onContentChanged = (e) => setContent(e.target.value)
+	const onAuthorChanged = (e) => setUserId(e.target.value)
 
 	const onSavePostClicked = (e) => {
 		e.preventDefault()
 
 		if (title && content) {
-			dispatch(postAdded(title, content))
+			dispatch(postAdded(title, content, userId))
 		}
 
 		setTitle('')
 		setContent('')
 	}
+
+	const userOptions = users.map((user) => (
+		<option key={user.id} value={user.id}>
+			{user.name}
+		</option>
+	))
 
 	return (
 		<section>
@@ -37,6 +44,14 @@ const AddPostForm = () => {
 					value={title}
 					onChange={onTitleChanged}
 				/>
+				<label htmlFor='postAuthor'>Author: </label>
+				<select
+					id='postAuthor'
+					value={userId}
+					onChange={onAuthorChanged}
+				>
+					{userOptions}
+				</select>
 				<label htmlFor='postContent'>Post Content: </label>
 				<textarea
 					id='postContent'
