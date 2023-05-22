@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 const AddPostForm = () => {
+	const dispatch = useDispatch()
+
 	const [title, setTitle] = useState('')
 	const [content, setContent] = useState('')
 
@@ -26,7 +29,7 @@ const AddPostForm = () => {
 					value={content}
 					onChange={onContentChanged}
 				/>
-				<button>Save Post</button>
+				<button onClick={dispatch()}>Save Post</button>
 			</form>
 		</section>
 	)
