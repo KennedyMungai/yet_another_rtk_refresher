@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux'
+// import { useDispatch, useSelector } from 'react-redux'
 
 function App() {
-	const dispatch = useDispatch()
-	const { count } = useSelector((state) => state.counter)
+	// const dispatch = useDispatch()
+	// const { count } = useSelector((state) => state.counter)
 
 	return <main className='main'></main>
 }
