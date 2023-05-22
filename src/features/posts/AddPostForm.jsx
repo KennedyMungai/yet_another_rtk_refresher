@@ -1,4 +1,3 @@
-import { nanoid } from '@reduxjs/toolkit'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { postAdded } from './postsSlice'
@@ -10,9 +9,9 @@ const AddPostForm = () => {
 	const [content, setContent] = useState('')
 
 	const onTitleChanged = (e) => setTitle(e.target.value)
-    const onContentChanged = (e) => setContent(e.target.value)
+	const onContentChanged = (e) => setContent(e.target.value)
 
-    const onSavePostClicked = (e) => {
+	const onSavePostClicked = (e) => {
 		e.preventDefault()
 
 		if (title && content) {
