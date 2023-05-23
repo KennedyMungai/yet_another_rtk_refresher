@@ -44,7 +44,7 @@ const postsSlice = createSlice({
 	}
 })
 
-export const selectAllPosts = (state) => state.posts
+export const selectAllPosts = (state) => state.posts.posts
 
 export const { postAdded, reactionAdded } = postsSlice.actions
 
