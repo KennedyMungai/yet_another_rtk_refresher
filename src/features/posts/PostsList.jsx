@@ -2,7 +2,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import AddPostForm from './AddPostForm'
 import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
-import { selectAllPosts } from './postsSlice'
+import {
+	selectAllPosts,
+	getPostsStatus,
+	getPostsError,
+	fetchPosts
+} from './postsSlice'
 import ReactionButtons from './ReactionButtons'
 import { useEffect } from 'react'
 
