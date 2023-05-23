@@ -18,6 +18,13 @@ const PostsList = () => {
 	const error = useSelector(getPostsError)
 	const postsStatus = useSelector(getPostsStatus)
 
+	useEffect(() => {
+		if (postsStatus === 'idle') {
+			dispatch(fetchPosts())
+		}
+	}, [postsStatus, dispatch])
+	
+
 	const orderedPosts = posts
 		.slice()
 		.sort((a, b) => b.date.localeCompare(a.date))
