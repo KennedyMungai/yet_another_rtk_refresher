@@ -15,8 +15,8 @@ const PostsList = () => {
 	const dispatch = useDispatch()
 	
 	const posts = useSelector(selectAllPosts)
-	const errors = useSelector(getPostsError)
-	const status = useSelector(getPostsStatus)
+	const postsStatus = useSelector(getPostsError)
+	const postsError = useSelector(getPostsStatus)
 
 	const orderedPosts = posts
 		.slice()
