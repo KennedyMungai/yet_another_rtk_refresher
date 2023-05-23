@@ -1,9 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AddPostForm from './AddPostForm'
-import PostAuthor from './PostAuthor'
-import ReactionButtons from './ReactionButtons'
-import TimeAgo from './TimeAgo'
 import {
 	fetchPosts,
 	getPostsError,
