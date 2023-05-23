@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AddPostForm from './AddPostForm'
+import PostsExcerpt from './postsExcerpt'
 import {
 	fetchPosts,
 	getPostsError,
 	getPostsStatus,
 	selectAllPosts
 } from './postsSlice'
-import PostsExcerpt from './postsExcerpt'
 
 const PostsList = () => {
 	const dispatch = useDispatch()
