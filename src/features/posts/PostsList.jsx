@@ -3,6 +3,7 @@ import AddPostForm from './AddPostForm'
 import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
 import { selectAllPosts } from './postsSlice'
+import ReactionButtons from './ReactionButtons'
 
 const PostsList = () => {
 	const posts = useSelector(selectAllPosts)
@@ -19,6 +20,7 @@ const PostsList = () => {
 				<PostAuthor userId={post.user} />
 				<TimeAgo timestamp={post.date} />
 			</p>
+			<ReactionButtons post={post} />
 		</article>
 	))
 
