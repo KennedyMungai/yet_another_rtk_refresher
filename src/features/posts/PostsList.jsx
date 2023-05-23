@@ -1,19 +1,19 @@
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AddPostForm from './AddPostForm'
 import PostAuthor from './PostAuthor'
+import ReactionButtons from './ReactionButtons'
 import TimeAgo from './TimeAgo'
 import {
-	selectAllPosts,
-	getPostsStatus,
+	fetchPosts,
 	getPostsError,
-	fetchPosts
+	getPostsStatus,
+	selectAllPosts
 } from './postsSlice'
-import ReactionButtons from './ReactionButtons'
-import { useEffect } from 'react'
 
 const PostsList = () => {
 	const dispatch = useDispatch()
-	
+
 	const posts = useSelector(selectAllPosts)
 	const error = useSelector(getPostsError)
 	const postsStatus = useSelector(getPostsStatus)
@@ -23,7 +23,6 @@ const PostsList = () => {
 			dispatch(fetchPosts())
 		}
 	}, [postsStatus, dispatch])
-	
 
 	const orderedPosts = posts
 		.slice()
