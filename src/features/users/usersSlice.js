@@ -3,11 +3,7 @@ import axios from 'axios'
 
 const USERS_URL = 'https://jsonplaceholder.typicode.com/users'
 
-const initialState = [
-	{ id: '0', name: 'Kijana Mangaa' },
-	{ id: '1', name: 'Mark Mendee' },
-	{ id: '2', name: 'Vindio Sinema' }
-]
+const initialState = []
 
 const usersSlice = createSlice({
 	name: 'Users',
