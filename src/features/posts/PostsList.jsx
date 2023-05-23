@@ -12,6 +12,8 @@ import ReactionButtons from './ReactionButtons'
 import { useEffect } from 'react'
 
 const PostsList = () => {
+	const dispatch = useDispatch()
+	
 	const posts = useSelector(selectAllPosts)
 
 	const orderedPosts = posts
