@@ -17,7 +17,16 @@ const SinglePostPage = () => {
 		)
 	}
 
-	return <div>SinglePostPage</div>
+    return (
+		<article>
+			<h2>{post.title}</h2>
+			<p>{post.body}</p>
+			<p className='postCredit'>
+				<PostAuthor userId={post.userId} />
+				<TimeAgo timestamp={post.date} />
+			</p>
+		</article>
+	)
 }
 
 export default SinglePostPage
