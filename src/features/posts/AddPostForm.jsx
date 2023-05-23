@@ -22,12 +22,19 @@ const AddPostForm = () => {
 	const onSavePostClicked = (e) => {
 		e.preventDefault()
 
-		if (title && content) {
-			dispatch(addNewPost({ title, content, userId }))
+		if (canSave) {
+			try {
+				setAddRequestStatus('pending')
+				dispatch(addNewPost({ title, content, userId })).unwrap()
+				setTitle('')
+				setContent('')
+				setUserId('')
+			} catch (error) {
+				console.error('Failed to save the post', error)
+			} finally {
+				setAddRequestStatus('idle')
+			}
 		}
-
-		setTitle('')
-		setContent('')
 	}
 
 	const userOptions = users.map((user) => (
