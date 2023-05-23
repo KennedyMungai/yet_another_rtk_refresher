@@ -4,6 +4,7 @@ import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
 import { selectAllPosts } from './postsSlice'
 import ReactionButtons from './ReactionButtons'
+import { useEffect } from 'react'
 
 const PostsList = () => {
 	const posts = useSelector(selectAllPosts)
