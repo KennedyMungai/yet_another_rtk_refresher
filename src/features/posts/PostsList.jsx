@@ -22,19 +22,26 @@ const PostsList = () => {
 		}
 	}, [postsStatus, dispatch])
 
-	const orderedPosts = posts
-		.slice()
-		.sort((a, b) => b.date.localeCompare(a.date))
+	let content
 
-	const renderedPosts = orderedPosts.map((post) => (
-		<PostsExcerpt post={post} key={post.id} />
-	))
+	if (postsStatus === 'loading') {
+		content = <p>Loading...</p>
+	} else if (postsStatus === 'succeeded') {
+		const orderedPosts = posts
+			.slice()
+			.sort((a, b) => b.date.localeCompare(a.date))
+		content = orderedPosts.map((post) => (
+			<PostsExcerpt key={post.id} post={post} />
+		))
+	} else if (postsStatus === 'failed') {
+		content = <p>{error}</p>
+	}
 
 	return (
 		<section>
 			<h2>Posts</h2>
 			<AddPostForm />
-			{renderedPosts}
+			{content}
 		</section>
 	)
 }
