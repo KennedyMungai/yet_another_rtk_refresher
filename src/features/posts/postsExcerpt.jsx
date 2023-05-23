@@ -1,4 +1,4 @@
-const PostsExcerpt = () => {
+const PostsExcerpt = ({ post }) => {
 	return <div>postsExcerpt</div>
 }
 
